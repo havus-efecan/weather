@@ -1,14 +1,19 @@
 import { callAPI } from "./api.js";
-import { locationInput, getLocationInput } from "./dom.js"
+import { locationInput, getLocationInput,searchButton,displayData } from "./dom.js"
+
+
 
 let location
 
 locationInput.addEventListener('keypress', async function(event){
 
     if(event.key === 'Enter'){
-        location = getLocationInput()
-       let x = await logAPICall(location)
-       console.log(x)
+       location = getLocationInput()
+       let data = await logAPICall(location)
+
+       displayData(data)
+
+
     }
 
 })
@@ -22,10 +27,33 @@ locationInput.addEventListener('keypress', async function(event){
 
 }
 
-// let apiData = await logAPICall()
+searchButton.addEventListener('click', async function(event){
+
+    location = getLocationInput()
+    let data = await logAPICall(location)
+
+    displayData(data)
 
 
-// console.log(apiData)
+
+})
+
+
+async function initialLoad(){
+
+    let data = await logAPICall('london')
+
+    displayData(data)
+}
+
+initialLoad()
+
+
+
+
+
+
+
 
 
 

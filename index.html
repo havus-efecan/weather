@@ -6,35 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weather app</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/6e5df77f8f.js" crossorigin="anonymous"></script>
     <script type="module" src="script.js"></script>
 
 </head>
 <body>
     <div id="header">
-        <div id="logo">placeholder</div>
+        <div id="logo"><i class="fa-solid fa-cloud"></i> Weatherge</div>
 
         <div id="search">
             <input type="text" placeholder="search location...">
-            <i></i>
+            <i id="search-button" class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <div id="spacer"></div> <!-- Empty spacer for centering -->
-
+        <div id="spacer"></div>
     </div>
     <div id="main">
         <div id="infobox-1">
 
-            <h2 id="weather">Weather</h2>
+            <h2>
+                <span id="weather"></span> </h2>
             <h2 id="location">Penisville</h2>
-            <h1 id="temp">69</h1>
-            <div id="secondary-info">
-                <h3>12:00 september 1</h3>
+            <h1  ><span id="temp"></span>    <img id="weatherIcon" alt="Weather Icon">
+            </h1>
+            <div class="border-bottom" id="secondary-info">
+                <h3 id="date">12:00 september 1</h3>
             </div>
         </div>
-        <div id="infobox-2">
-            <h3 id="feels">Feels like 80</h2>
-            <h3 id="wind">Wind</h2>
-            <h3 id="humidity">humdiity</h1>
-            <h3 id="rain">69% chance of rain</h1>
+        <div  id="infobox-2">
+            <h3 id="feels"><span>Feels like 80</span> </h3>
+            <h3><i class="fa-solid fa-wind"></i><span id="wind"> wind</span></h3>
+            <h3><i class="fa-solid fa-droplet"></i><span id="humidity"> humdity</span> </h3>
+            <h3><i class="fa-solid fa-cloud-rain"></i><span id="rain"> rain</span></h3>
 
         </div>
     </div>
